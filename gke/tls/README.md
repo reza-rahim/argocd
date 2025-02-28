@@ -9,3 +9,7 @@ openssl req -new -config myserver.cnf -keyout myserver.key -out myserver.csr
 
 ## Create a server key and cert
 openssl x509 -req -days 18000 -in myserver.csr -CA cacert.crt  -CAkey ca.key   -out myserver.crt
+
+
+## Print out the crt 
+openssl x509 -noout -text -in  myserver.crt
