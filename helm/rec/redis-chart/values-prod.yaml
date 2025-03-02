@@ -1,0 +1,9 @@
+limits:
+    cpu: "3000m"
+    memory: "4000Mi"
+requests:
+    cpu: "3000m"
+    memory: "4000Mi"
+nodes: 3
+storageClass: "standard"
+volumeSize: "8000Mi"
