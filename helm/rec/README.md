@@ -1,2 +1,5 @@
-#helm create redis-chart 
+```
+## helm create redis-chart 
 helm install -n dev redis  ./redis-chart
+
+```
