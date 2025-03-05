@@ -8,3 +8,10 @@ export VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enter
 kubectl apply -n dev -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 kubectl apply -n pod  -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 
+
+kubectl apply -n dev -f rec.yaml
+
+kubectl port-forward -n dev svc/my-rec-ui  8443:8443  &
+
+kubectl get -n dev secrets my-rec -o json | jq .data.password | sed 's/"//g' | base64 -d
+kubectl get -n dev secrets my-rec -o json | jq .data.username  | sed 's/"//g' | base64 -d 
